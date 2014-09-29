@@ -1,9 +1,10 @@
-package com.dmb.tp.util;
+package com.dmb.tp.model;
 
-import java.util.Comparator;
-
-import com.dmb.tp.model.Node;
-
+/**
+ * Model of the Node to A Star
+ * @author Deise Miranda
+ *
+ */
 public class AStarNode {
 
 	private Node node;
@@ -43,7 +44,7 @@ public class AStarNode {
 		this.h = h;
 	}
 	
-	public double getF(){
+	public double getFunctionAvaliation(){
 		return g + h;
 	}
 }

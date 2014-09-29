@@ -9,9 +9,20 @@ import java.util.ArrayList;
 import com.dmb.tp.model.Edge;
 import com.dmb.tp.model.Graph;
 import com.dmb.tp.model.Node;
-
+/**
+ * Class responsible to read file input 
+ * @author Deise Miranda
+ *
+ */
 public class FileUtils {
 
+	/**
+	 * Method responsible to read and generated Graph
+	 * @param path
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public static Graph readFileToGraph(String path) throws FileNotFoundException, IOException {
 		BufferedReader bfreader = new BufferedReader(new FileReader(path));
 		ArrayList<Node> nodes = new ArrayList<Node>();

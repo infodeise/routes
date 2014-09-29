@@ -1,9 +1,12 @@
 package com.dmb.tp.model;
-
+/**
+ * Model to Node of the Graph
+ * @author Deise Miranda
+ *
+ */
 public class Node {
 	private String label;
-	protected boolean visited;
-	public double distance = Double.POSITIVE_INFINITY;
+	private boolean visited;
 
 	public Node(String label) {
 		this.label = label;
@@ -22,12 +25,8 @@ public class Node {
 		return visited;
 	}
 
-	public void visit() {
-		visited = true;
-	}
-
-	public void unvisit() {
-		visited = false;
+	public void setVisit(boolean visit) {
+		visited = visit;
 	}
 	
 	public int compareTo(Node ob) {

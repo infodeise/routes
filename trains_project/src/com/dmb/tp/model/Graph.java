@@ -7,8 +7,6 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Stack;
 
-import com.dmb.tp.util.AStarNode;
-
 /**
  * Class that represent Graph model
  * 
@@ -133,9 +131,9 @@ public class Graph {
 	}
 
 	/**
-	 * with a maximum of
+	 * Method responsible to return the neighbors nodes.
 	 * @param node
-	 * @return
+	 * @return ArrayList<Node> with neighbors nodes
 	 */
 	public ArrayList<Node> getNeighbors(Node node) {
 		ArrayList<Node> neighbors = new ArrayList<Node>();
@@ -148,6 +146,12 @@ public class Graph {
 		return neighbors;
 	}
 
+	/**
+	 * Method responsible to calculating the distance between two nodes
+	 * @param a Start node
+	 * @param b End node
+	 * @return value of the distance between two nodes
+	 */
 	public double calcDistance(Node a, Node b) {
 		int distance = 0;
 
@@ -169,7 +173,7 @@ public class Graph {
 					distance += mapEdges.get(key).getWeight();
 					return distance;
 				} else if (!mapNodes.get(neighbor.getLabel()).isVisited()) {
-					mapNodes.get(neighbor.getLabel()).visit();
+					mapNodes.get(neighbor.getLabel()).setVisit(true);
 					return distance += calcDistance(neighbor, b);
 				}
 			}
@@ -177,6 +181,12 @@ public class Graph {
 		return 0;
 	}
 
+	/**
+	 * Method responsible to calculating the length of the shortest route between two nodes
+	 * @param init
+	 * @param finish
+	 * @return value of the shortest distance
+	 */
 	public double getShortestRoute(Node init, Node finish) {
 		Map<String, AStarNode> unvisitedNodes = new HashMap<String, AStarNode>();
 		PriorityQueue<AStarNode> pQueue = new PriorityQueue(11, new AStarNodeComparator());

@@ -1,5 +1,9 @@
 package com.dmb.tp.model;
-
+/**
+ * Model to Edge of the Graph
+ * @author Deise Miranda
+ *
+ */
 public class Edge {
 	private Node nodeInit;
 	private Node nodeEnd;
