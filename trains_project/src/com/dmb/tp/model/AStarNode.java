@@ -9,7 +9,9 @@ public class AStarNode {
 
 	private Node node;
 	private AStarNode cameFrom;
+	//Distance of the init node to current node
 	private double g;
+	//Distance of the current node to finish node 
 	private double h;
 	
 	

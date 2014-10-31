@@ -29,13 +29,6 @@ public class Node {
 		visited = visit;
 	}
 	
-	public int compareTo(Node ob) {
-        String tempA = this.toString();
-        String tempB = ob.toString();
-         
-        return tempA.compareTo(tempB);
-    }
-	
 	public String toString() {
         return label.toString();
     }
